@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#phone-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('./assets/BG.png') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden; 
+    border-radius: 25px;
+}
+
+.app {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+
+.app-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5.5rem;
+    overflow: hidden;
+}
+
+.header {
+    position: fixed;
+    top: 1.8rem;
+    width: 100%;
+    text-align: center;
+    padding: 0.55rem 0;
+    background-color: rgba(0, 0, 0, 0);
+    color: #fff;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.title {
+    font-size: 1.7rem; 
+    font-weight: 600;
+}
+
+.subtitle {
+    font-size: 1.15rem; 
+    font-weight: 400;
+    color: #ccc;
+}
+
+.companies {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5rem;
+    padding-top: 2.5rem;
+    max-height: 45rem;
+    overflow-y: auto;
+    scrollbar-width: thin; 
+    scrollbar-color: transparent transparent;
+    width: 100%;
+}
+
+.companies::-webkit-scrollbar {
+    width: 0; 
+}
+
+.company {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem;
+    margin: 0.2rem 1rem;
+    width: calc(100% - 2rem);
+    background-color: #19334d4b;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    color: #111;
+}
+
+.company-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+}
+
+.company-image img {
+    border-radius: 5px;
+    height: 2.5rem;
+    width: 2.8rem;
+}
+
+.company-name {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #fff;
+    font-size: 0.5rem; 
+    text-align: center;
+    padding: 0 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.company-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+}
+
+.company-status-circle {
+    border-radius: 9%;
+    height: 1.15rem;
+    width: 1.15rem;
+}
+
+.company-status-circle.offline {
+    background-color: #c32222; 
+}
+
+.company-status-circle.online {
+    background-color: #4caf50;
+}
+
+.company-status-circle.blue {
+    background-color: #0084ff;
+}
+
+.company:hover {
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 32, 92, 0.068);
+}
+
+.company.light {
+    background-color: #030b0f33;
+}
+
+.send-message-button,
+.send-ad-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: color 0.3s;
+}
+
+.send-message-button:hover .message-icon,
+.send-ad-button:hover .ad-icon {
+    color: #0a9dff; 
+}
+
+.message-icon,
+.ad-icon {
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+.send-ad-button .ad-icon {
+    color: #ff9800; 
+}
+
+.send-ad-button:hover .ad-icon {
+    color: #ffa726; 
+}
+
+.hide-icon {
+    display: none;
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup {
+    background: #fff;
+    width: 90%;
+    max-width: 400px;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+}
+
+.popup-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.popup-description {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.popup-input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.popup-input:focus {
+    border-color: #007bff; 
+}
+
+.popup-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.popup-button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.popup-button.red {
+    background: #e53935;
+    color: #fff;
+}
+
+.popup-button.red:hover {
+    background: #d32f2f;
+    transform: scale(1.05);
+}
+
+.popup-button.blue {
+    background: #007bff;
+    color: #fff;
+}
+
+.popup-button.blue:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
